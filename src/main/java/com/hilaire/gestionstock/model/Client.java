@@ -1,7 +1,11 @@
 package com.hilaire.gestionstock.model;
 
-import jakarta.persistence.Column;
+import java.util.List;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
+import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,6 +16,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
+@Entity
 @Table(name = "client")
 public class Client extends AbstractEntity{
 
@@ -20,8 +25,9 @@ public class Client extends AbstractEntity{
 
   @Column(name = "prenom")
   private String prenom;
-
-  //private adress
+  
+  @Embedded
+  private Adresse adresse;
 
   @Column(name = "photo")
   private String photo;
@@ -31,4 +37,7 @@ public class Client extends AbstractEntity{
 
   @Column(name = "numTel")
   private String numTel;
+  
+  @OneToMany(mappedBy = "client")
+  private List<CommandeClient> commandeClients;
 }

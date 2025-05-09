@@ -1,7 +1,8 @@
 package com.hilaire.gestionstock.model;
 
+
 import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
+import jakarta.persistence.Embeddable;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,11 +12,24 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(callSuper = true)
-@Entity
+@EqualsAndHashCode
+@Embeddable
 @Table(name = "adresse")
-public class Adresse extends AbstractEntity {
+public class Adresse  {
     
-    private String x;
+    @Column(name = "adresse1")
+    private String adresse1;
+
+    @Column(name = "adresse2")
+    private String adresse2;
+
+    @Column(name = "ville")
+    private String ville;
+    
+    @Column(name = "codepostal")
+    private String codePostal;
+     
+    @Column(name = "pays")
+    private String pays;
 
 }
