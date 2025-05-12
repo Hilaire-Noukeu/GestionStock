@@ -20,6 +20,6 @@ import lombok.NoArgsConstructor;
 @Table(name = "ventes")
 public class Ventes extends AbstractEntity{
      
-     @OneToMany(mappedBy = "Ventes")
+     @OneToMany(mappedBy = "vente")
      private List<LigneVente> ligneVentes;
 }

@@ -38,6 +38,6 @@ public class Fournisseur extends AbstractEntity{
   @Column(name = "numTel")
   private String numTel;
   
-  @OneToMany(mappedBy = "fornisseur")
+  @OneToMany(mappedBy = "fournisseur")
   private List<CommandeFournisseur> commandeFournisseurs;
 }
