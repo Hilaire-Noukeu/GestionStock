@@ -8,16 +8,14 @@ import lombok.Data;
 @Builder
 public class FournisseurDto {
 
+  private  Integer id;
 
   private String nom;
 
-  
   private String prenom;
-  
-  @Embedded
+
   private AdresseDto adresse;
 
-  
   private String photo;
 
   private String mail;

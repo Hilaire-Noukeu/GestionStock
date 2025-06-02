@@ -10,5 +10,7 @@ import lombok.Data;
 @Builder
 public class VentesDto {
 
+     private  Integer id;
+
      private List<LigneVenteDto> ligneVentes;
 }

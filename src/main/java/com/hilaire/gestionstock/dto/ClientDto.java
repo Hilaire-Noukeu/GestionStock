@@ -11,24 +11,19 @@ import lombok.Data;
 @Builder
 public class ClientDto {
 
-    
+  private  Integer id;
+
   private String nom;
 
-  
   private String prenom;
-  
-  @Embedded
+
   private AdresseDto adresse;
 
-  
   private String photo;
-
   
   private String mail;
 
-  
   private String numTel;
-  
   
   private List<CommandeClientDto> commandeClients;
 

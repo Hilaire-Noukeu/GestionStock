@@ -7,10 +7,11 @@ import lombok.Data;
 @Builder
 public class RolesDto {
 
-     private String nom;
+     private  Integer id;
 
+     private String nom;
  
-  private UtrilisateurDto utilisateur;
+     private UtilisateurDto utilisateur;
 
 
 }

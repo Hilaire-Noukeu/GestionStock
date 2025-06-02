@@ -9,6 +9,8 @@ import lombok.Data;
 @Builder
 public class LigneCommandeClientDto {
 
+    private  Integer id;
+
     private Article article;
     
     private CommandeClientDto commandeClient;

@@ -7,6 +7,8 @@ import lombok.Data;
 @Builder
 public class MvtStkDto {
 
+    private  Integer id;
+
     private ArticleDto article;
 
 }
