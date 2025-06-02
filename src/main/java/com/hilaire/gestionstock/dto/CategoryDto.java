@@ -35,5 +35,14 @@ public class CategoryDto {
 
   //mapping from Dto to Entity
 
-
+public  Category toEntity(CategoryDto categoryDto){
+    if (categoryDto == null){
+      return  null;
+    }
+    return Category.builder()
+            .id(categoryDto.getId())
+            .code(categoryDto.getCode())
+            .designation(categoryDto.getDesignation())
+            .build();
+}
 }
