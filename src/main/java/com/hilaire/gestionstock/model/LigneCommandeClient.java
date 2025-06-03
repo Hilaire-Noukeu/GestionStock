@@ -1,14 +1,13 @@
 package com.hilaire.gestionstock.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import jakarta.persistence.Table;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
+
+import java.math.BigDecimal;
 
 @Data
 @SuperBuilder
@@ -26,4 +25,10 @@ public class LigneCommandeClient extends AbstractEntity{
     @ManyToOne
     @JoinColumn(name = "idcommandeclient")
     private CommandeClient commandeClient;
+
+    @Column(name = "quantite")
+    private BigDecimal quantite;
+
+    @Column(name = "prixunitaire")
+    private BigDecimal prixUnitaire;
 }

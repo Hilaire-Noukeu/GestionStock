@@ -1,5 +1,6 @@
 package com.hilaire.gestionstock.dto;
 
+import com.hilaire.gestionstock.model.Roles;
 import lombok.Builder;
 import lombok.Data;
 
@@ -9,9 +10,30 @@ public class RolesDto {
 
      private  Integer id;
 
-     private String nom;
+     private String roleName;
  
      private UtilisateurDto utilisateur;
 
 
+     public static RolesDto fromEntity(Roles roles) {
+          if (roles == null){
+               return null;
+          }
+          RolesDto.builder()
+                  .id(roles.getId())
+                  .roleName(roles.getRoleName())
+                  .build();
+     }
+
+     public static Roles toEntity(RolesDto rolesDto) {
+          if (rolesDto == null){
+               return null;
+          }
+          Roles roles = new Roles();
+
+          roles.setId(rolesDto.getId());
+          roles.setRoleName(rolesDto.getRoleName());
+
+          return roles;
+     }
 }

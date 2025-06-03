@@ -27,7 +27,7 @@ public class ArticleDto {
 
     //mapping from Entity to Dto
 
-    public ArticleDto fromEntity(Article article){
+    public static ArticleDto fromEntity(Article article){
         if(article == null){
             return null;
         }
@@ -43,6 +43,23 @@ public class ArticleDto {
     }
 
     //mapping from Dto to Entity
+public static Article toEntity( ArticleDto articleDto){
+
+        if(articleDto == null){
+            return null;
+        }
+        Article article = new Article();
+
+        article.setId(articleDto.getId());
+        article.setCodeArticle(articleDto.getCodeArticle());
+        article.setDesignation(articleDto.getDesignation());
+        article.setPrixUnitaireHt(articleDto.getPrixUnitaireHt());
+        article.setTauxTva(articleDto.getTauxTva());
+        article.setPrixUnitaireTtc(articleDto.getPrixUnitaireTtc());
+        article.setPhoto(articleDto.getPhoto());
+
+        return article;
+}
 
 
 }

@@ -2,10 +2,7 @@ package com.hilaire.gestionstock.model;
 
 import java.math.BigDecimal;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -22,6 +19,9 @@ import lombok.experimental.SuperBuilder;
 public class LigneVente extends AbstractEntity {
 
     private BigDecimal quantite;
+
+    @Column(name = "prixunitaire")
+    private BigDecimal prixUnitaire;
     
     @ManyToOne
     @JoinColumn(name = "identes")

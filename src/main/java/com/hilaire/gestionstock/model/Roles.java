@@ -22,12 +22,12 @@ import lombok.experimental.SuperBuilder;
 @Entity
 @Table(name = "roles")
 public class Roles extends AbstractEntity{
-    
-    @Column(name = "nom")
-    private String nom;
 
-  @ManyToOne
-  @JoinColumn(name = "idutilisateur")
-  private Utilisateur utilisateur;
+    @Column(name = "rolename")
+    private String roleName;
+
+    @ManyToOne
+    @JoinColumn(name = "idutilisateur")
+    private Utilisateur utilisateur;
 
 }

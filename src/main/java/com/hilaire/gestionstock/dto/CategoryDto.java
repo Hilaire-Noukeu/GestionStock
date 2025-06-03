@@ -21,7 +21,7 @@ public class CategoryDto {
   private List<ArticleDto> articles;
 
    //mapping from Entity to Dto
-  public  CategoryDto fromEntity(Category category) {
+  public  static CategoryDto fromEntity(Category category) {
 
     if (category == null){
         return null;
@@ -35,14 +35,16 @@ public class CategoryDto {
 
   //mapping from Dto to Entity
 
-public  Category toEntity(CategoryDto categoryDto){
+public  static Category toEntity(CategoryDto categoryDto){
     if (categoryDto == null){
       return  null;
     }
-    return Category.builder()
-            .id(categoryDto.getId())
-            .code(categoryDto.getCode())
-            .designation(categoryDto.getDesignation())
-            .build();
+    Category category = new Category();
+
+    category.setId(categoryDto.getId());
+    category.setCode(categoryDto.getCode());
+    category.setDesignation(categoryDto.getDesignation());
+
+    return category;
 }
 }
