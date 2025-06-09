@@ -1,7 +1,10 @@
 package com.hilaire.gestionstock.exception;
 
+import lombok.Getter;
+
 public class EntityNotFoundException extends RuntimeException {
 
+    @Getter
     private ErrorCodes errorCode;
 
     public EntityNotFoundException(String message) {
