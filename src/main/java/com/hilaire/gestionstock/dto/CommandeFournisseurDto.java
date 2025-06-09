@@ -29,7 +29,7 @@ public class CommandeFournisseurDto {
        if (commandeFournisseur == null){
            return null;
        }
-       CommandeFournisseurDto.builder()
+      return CommandeFournisseurDto.builder()
                .id(commandeFournisseur.getId())
                .code(commandeFournisseur.getCode())
                .dateCommande(commandeFournisseur.getDateCommande())
@@ -44,7 +44,7 @@ public class CommandeFournisseurDto {
 
        commandeFournisseur.setId(commandeFournisseurDto.getId());
        commandeFournisseur.setCode(commandeFournisseurDto.getCode());
-       commandeFournisseur.SetDateCommande(commandeFournisseurDto.get());
+
 
        return commandeFournisseur;
    }

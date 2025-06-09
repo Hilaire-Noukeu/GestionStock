@@ -21,7 +21,7 @@ public class LigneVenteDto {
         if (ligneVente == null){
             return null;
         }
-        LigneVenteDto.builder()
+        return LigneVenteDto.builder()
                 .id(ligneVente.getId())
                 .quantite(ligneVente.getQuantite())
                 .build();

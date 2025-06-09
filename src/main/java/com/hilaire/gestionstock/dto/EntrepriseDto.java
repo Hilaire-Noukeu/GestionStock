@@ -36,7 +36,7 @@ public class EntrepriseDto {
         if (entreprise == null){
             return null;
         }
-        EntrepriseDto.builder()
+        return EntrepriseDto.builder()
                 .id(entreprise.getId())
                 .nom(entreprise.getNom())
                 .description(entreprise.getDescription())

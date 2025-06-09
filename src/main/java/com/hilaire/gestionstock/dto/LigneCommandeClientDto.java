@@ -26,7 +26,7 @@ public class LigneCommandeClientDto {
         if (ligneCommandeClient == null) {
             return null;
         }
-        LigneCommandeClientDto.builder()
+        return LigneCommandeClientDto.builder()
                 .id(ligneCommandeClient.getId())
                 .article(ligneCommandeClient.getArticle())
                 .quantite(ligneCommandeClient.getQuantite())

@@ -37,7 +37,7 @@ public class UtilisateurDto {
     if (utilisateur == null){
       return null;
     }
-    UtilisateurDto.builder()
+    return UtilisateurDto.builder()
             .id(utilisateur.getId())
             .nom(utilisateur.getNom())
             .prenom(utilisateur.getPrenom())

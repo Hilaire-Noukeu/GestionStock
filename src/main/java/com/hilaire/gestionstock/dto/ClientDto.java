@@ -35,7 +35,7 @@ public class ClientDto {
     if(client == null) {
       return null;
     }
-      ClientDto.builder()
+      return ClientDto.builder()
               .id(client.getId())
               .nom(client.getNom())
               .prenom(client.getPrenom())

@@ -32,7 +32,7 @@ public class FournisseurDto {
     if (fournisseur == null){
       return null;
     }
-    FournisseurDto.builder()
+    return FournisseurDto.builder()
             .id(fournisseur.getId())
             .nom(fournisseur.getNom())
             .prenom(fournisseur.getPrenom())

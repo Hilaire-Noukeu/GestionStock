@@ -28,7 +28,7 @@ public class CommandeClientDto {
         if (commandeClient == null) {
             return null;
         }
-        CommandeClientDto.builder()
+       return CommandeClientDto.builder()
                 .id(commandeClient.getId())
                 .code(commandeClient.getCode())
                 .dateCommande(commandeClient.getDateCommande())
