@@ -14,5 +14,5 @@ public interface ArticleService {
 
     List<ArticleDto> finAll();
 
-    void delete();
+    void delete(Integer id);
 }
