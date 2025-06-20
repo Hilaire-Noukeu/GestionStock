@@ -10,6 +10,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @Data
 @Builder
 @NoArgsConstructor
@@ -17,7 +19,7 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode
 @Embeddable
 @Table(name = "adresse")
-public class Adresse  {
+public class Adresse implements Serializable {
     
     @Column(name = "adresse1")
     private String adresse1;

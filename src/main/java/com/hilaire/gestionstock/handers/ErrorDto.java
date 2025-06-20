@@ -14,7 +14,7 @@ import java.util.List;
 public class ErrorDto {
 
     private int httpCode;
-    private ErrorCodes errorCode;
+    private ErrorCodes code;
     private String message;
     private List<String> errors = new ArrayList<>();
 
