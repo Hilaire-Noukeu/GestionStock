@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface ArticleService {
 
-    ArticleDto save(ArticleDto articleDto) ;
+    ArticleDto save(ArticleDto articleDto);
 
     ArticleDto findById(Integer id);
 

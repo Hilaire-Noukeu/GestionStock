@@ -11,9 +11,11 @@ import com.hilaire.gestionstock.validator.ArticleValidator;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @Slf4j
@@ -52,16 +54,29 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Override
     public ArticleDto findByCodeArticle(String codeArticle) {
-        return null;
+
+        if(!StringUtils.hasLength(codeArticle)) {
+            log.error("Article code is null");
+            return null;
+
+        }
+        Optional<Article> article = articleRepository.findArticleByCodeArticle(codeArticle);
+        return Optional.of(ArticleDto.fromEntity(article.get())).orElseThrow(() -> new EntityNotFoundException("aucun article avec le code" + codeArticle + "na ete retrouve",ErrorCodes.ARTICLE_NOT_FOUND));
+
     }
 
     @Override
     public List<ArticleDto> finAll() {
-        return List.of();
+        return articleRepository.findAll().stream().map(ArticleDto::fromEntity).collect(Collectors.toList());
     }
 
     @Override
     public void delete(Integer id) {
+        if(id == null) {
+            log.error("Article id is null");
+            return ;
+        }
+        articleRepository.deleteById(id);
 
     }
 
