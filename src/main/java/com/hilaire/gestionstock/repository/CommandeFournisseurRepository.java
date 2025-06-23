@@ -5,5 +5,5 @@ import com.hilaire.gestionstock.model.CommandeFournisseur;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CommandeFournisseurRepository extends JpaRepository<Integer, CommandeFournisseur> {
+public interface CommandeFournisseurRepository extends JpaRepository<CommandeFournisseur,Integer > {
 }

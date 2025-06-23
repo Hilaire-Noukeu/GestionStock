@@ -5,5 +5,5 @@ import com.hilaire.gestionstock.model.Entreprise;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface EntrepriseRepository extends JpaRepository<Integer, Entreprise> {
+public interface EntrepriseRepository extends JpaRepository<Entreprise,Integer> {
 }
